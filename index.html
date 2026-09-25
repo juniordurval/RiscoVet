@@ -140,8 +140,10 @@
     width:38px; height:38px; border-radius:10px;
     background:var(--primary);
     display:flex; align-items:center; justify-content:center;
+    overflow:hidden;
   }
   .brand-mark svg{ width:22px; height:22px; color:var(--bg); }
+  .brand-mark img{ width:100%; height:100%; object-fit:cover; }
   .brand-word{ font-family:var(--font-display); font-weight:700; font-size:1.28rem; letter-spacing:-.01em; }
   .brand-word span{ color:var(--accent); }
 
@@ -251,6 +253,8 @@
     display:flex; align-items:center; justify-content:center;
   }
   .carnet-emblem-circle svg{ width:44px; height:44px; color:var(--bg); }
+  .carnet-emblem-circle{ overflow:hidden; }
+  .carnet-emblem-circle img{ width:100%; height:100%; object-fit:cover; border-radius:50%; }
   .carnet-name{
     text-align:center; font-family:var(--font-display); font-weight:600; font-size:1.3rem;
   }
@@ -327,8 +331,16 @@
     background:#EAF0E9;
     display:flex; align-items:center; justify-content:center;
     margin-bottom:1.1rem;
+    overflow:hidden;
   }
   .ficha-icon svg{ width:24px; height:24px; color:var(--primary); }
+  .ficha-icon img{ width:100%; height:100%; object-fit:cover; }
+  .ficha-photo{
+    aspect-ratio:16/10; border-radius:var(--radius) var(--radius) 0 0;
+    overflow:hidden; margin:-1.7rem -1.5rem 1.1rem;
+  }
+  .ficha-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .ficha{ overflow:hidden; }
   .ficha h3{
     font-family:var(--font-display); font-weight:600; font-size:1.12rem;
   }
@@ -365,6 +377,7 @@
     display:flex; align-items:center; justify-content:center;
   }
   .product-media svg{ width:38%; height:38%; color:var(--primary-light); }
+  .product-media img{ width:100%; height:100%; object-fit:cover; display:block; }
   .product-body{ padding:1.1rem 1.15rem 1.3rem; }
   .product h4{ font-family:var(--font-display); font-weight:600; font-size:1.02rem; }
   .product p{ font-size:.85rem; color:var(--ink-soft); margin-top:.35rem; }
@@ -388,13 +401,10 @@
   .photo-frame{
     aspect-ratio:4/5;
     border-radius:18px;
-    border:1.5px dashed var(--line-strong);
-    background:#EDEFE2;
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    gap:.9rem; text-align:center; padding:2rem;
+    overflow:hidden;
+    box-shadow: var(--shadow);
   }
-  .photo-frame svg{ width:52px; height:52px; color:var(--line-strong); }
-  .photo-frame p{ font-size:.82rem; color:var(--ink-soft); max-width:22ch; font-family:var(--font-mono); }
+  .photo-frame img{ width:100%; height:100%; object-fit:cover; display:block; }
 
   /* ============ HOURS ============ */
   .hours-card{
@@ -463,6 +473,9 @@
     border-bottom:1px solid rgba(241,243,234,.12);
   }
   .footer-brand .brand-word{ color:var(--bg); }
+  .footer-brand-row{ display:flex; align-items:center; gap:.6em; }
+  .footer-logo{ width:34px; height:34px; border-radius:9px; overflow:hidden; flex-shrink:0; }
+  .footer-logo img{ width:100%; height:100%; object-fit:cover; }
   .footer-brand p{ margin-top:1rem; font-size:.88rem; max-width:34ch; color:#9FB0A5; }
   .footer-col h5{ font-family:var(--font-mono); font-size:.76rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem; }
   .footer-col ul{ display:grid; gap:.65rem; }
@@ -520,7 +533,7 @@
   <div class="container nav">
     <a href="#inicio" class="brand">
       <span class="brand-mark">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.5 8.8c1 0 1.8-1 1.8-2.3S9.5 4.2 8.5 4.2s-1.8 1-1.8 2.3.8 2.3 1.8 2.3zm7 0c1 0 1.8-1 1.8-2.3s-.8-2.3-1.8-2.3-1.8 1-1.8 2.3.8 2.3 1.8 2.3zM5.3 13c.9 0 1.6-.9 1.6-2s-.7-2-1.6-2-1.6.9-1.6 2 .7 2 1.6 2zm13.4 0c.9 0 1.6-.9 1.6-2s-.7-2-1.6-2-1.6.9-1.6 2 .7 2 1.6 2zM12 12.2c-2.6 0-5.4 2.1-5.4 4.6 0 1.5 1.2 2.4 2.7 2.4.9 0 1.6-.4 2.7-.4s1.8.4 2.7.4c1.5 0 2.7-.9 2.7-2.4 0-2.5-2.8-4.6-5.4-4.6z"/></svg>
+        <img src="images/logo.jpg" alt="Logo RiscoVet">
       </span>
       <span class="brand-word">Risco<span>Vet</span></span>
     </a>
@@ -596,7 +609,7 @@
         </div>
         <div class="carnet-emblem">
           <div class="carnet-emblem-circle">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8.5 8.8c1 0 1.8-1 1.8-2.3S9.5 4.2 8.5 4.2s-1.8 1-1.8 2.3.8 2.3 1.8 2.3zm7 0c1 0 1.8-1 1.8-2.3s-.8-2.3-1.8-2.3-1.8 1-1.8 2.3.8 2.3 1.8 2.3zM5.3 13c.9 0 1.6-.9 1.6-2s-.7-2-1.6-2-1.6.9-1.6 2 .7 2 1.6 2zm13.4 0c.9 0 1.6-.9 1.6-2s-.7-2-1.6-2-1.6.9-1.6 2 .7 2 1.6 2zM12 12.2c-2.6 0-5.4 2.1-5.4 4.6 0 1.5 1.2 2.4 2.7 2.4.9 0 1.6-.4 2.7-.4s1.8.4 2.7.4c1.5 0 2.7-.9 2.7-2.4 0-2.5-2.8-4.6-5.4-4.6z"/></svg>
+            <img src="images/logo.jpg" alt="Logo RiscoVet">
           </div>
         </div>
         <div class="carnet-name">Paciente feliz</div>
@@ -632,31 +645,37 @@
 
     <div class="grid-3">
       <div class="ficha reveal">
+        <div class="ficha-photo"><img src="images/consulta-general.jpg" alt="Consulta veterinaria general"></div>
         <div class="ficha-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 4v6a4 4 0 0 0 8 0V4M10 20v-4M8 20h4"/><circle cx="16.5" cy="9" r="2"/></svg></div>
         <h3>Consulta general</h3>
         <p>Revisión completa, diagnóstico y seguimiento del estado de salud de tu mascota.</p>
       </div>
       <div class="ficha reveal">
+        <div class="ficha-photo"><img src="images/vacunacion.jpg" alt="Vacunación y desparasitación"></div>
         <div class="ficha-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m18 2 4 4-9 9-5 1 1-5 9-9Z"/><path d="M13 7 4 16v4h4l9-9"/></svg></div>
         <h3>Vacunación y desparasitación</h3>
         <p>Esquemas de vacunas al día y control de parásitos internos y externos.</p>
       </div>
       <div class="ficha reveal">
+        <div class="ficha-photo"><img src="images/cirugias.jpg" alt="Cirugías veterinarias"></div>
         <div class="ficha-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 4 8.5 15.5 4 11"/><path d="M14 20a8 8 0 1 0-8-8"/></svg></div>
         <h3>Cirugías</h3>
         <p>Esterilizaciones y procedimientos quirúrgicos con protocolos de seguridad.</p>
       </div>
       <div class="ficha reveal">
+        <div class="ficha-photo"><img src="images/estetica.jpg" alt="Estética y baño canino"></div>
         <div class="ficha-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="m8.5 8.5 7 7"/></svg></div>
         <h3>Estética y baño</h3>
         <p>Baño, corte y cuidado del pelaje para que tu mascota luzca y se sienta bien.</p>
       </div>
       <div class="ficha reveal">
+        <div class="ficha-photo"><img src="images/laboratorio.jpg" alt="Laboratorio veterinario"></div>
         <div class="ficha-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 3h6M10 3v5.5L5.5 17a2 2 0 0 0 1.8 3h9.4a2 2 0 0 0 1.8-3L14 8.5V3"/><path d="M8 14h8"/></svg></div>
         <h3>Laboratorio</h3>
         <p>Análisis clínicos que ayudan a un diagnóstico más preciso.</p>
       </div>
       <div class="ficha reveal">
+        <div class="ficha-photo"><img src="images/venta-productos.jpg" alt="Venta de productos para mascotas"></div>
         <div class="ficha-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></div>
         <h3>Venta de productos</h3>
         <p>Alimento balanceado, accesorios y medicamentos para el cuidado diario.</p>
@@ -684,35 +703,35 @@
 
     <div class="grid-4" id="catalog-grid">
       <div class="product reveal" data-cat="alimento">
-        <div class="product-media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></div>
+        <div class="product-media"><img src="images/alimento-perros.jpg" alt="Alimento para perros"></div>
         <div class="product-body"><h4>Alimento para perros</h4><p>Balanceado por etapa y tamaño de raza.</p><span class="product-tag">En tienda</span></div>
       </div>
       <div class="product reveal" data-cat="alimento">
-        <div class="product-media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></div>
+        <div class="product-media"><img src="images/alimento-gatos.jpg" alt="Alimento para gatos"></div>
         <div class="product-body"><h4>Alimento para gatos</h4><p>Fórmulas para gatitos, adultos y senior.</p><span class="product-tag">En tienda</span></div>
       </div>
       <div class="product reveal" data-cat="accesorios">
-        <div class="product-media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="7"/><path d="M12 5v14M5 12h14"/></svg></div>
+        <div class="product-media"><img src="images/collares-correas.jpg" alt="Collares y correas"></div>
         <div class="product-body"><h4>Collares y correas</h4><p>Distintos tamaños y colores disponibles.</p><span class="product-tag">En tienda</span></div>
       </div>
       <div class="product reveal" data-cat="accesorios">
-        <div class="product-media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="10" width="18" height="8" rx="2"/><path d="M7 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/></svg></div>
+        <div class="product-media"><img src="images/camas-transportadoras.jpg" alt="Camas y transportadoras"></div>
         <div class="product-body"><h4>Camas y transportadoras</h4><p>Para el descanso y los traslados seguros.</p><span class="product-tag">En tienda</span></div>
       </div>
       <div class="product reveal" data-cat="higiene">
-        <div class="product-media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3c2 2.5 4 5.2 4 8a4 4 0 1 1-8 0c0-2.8 2-5.5 4-8Z"/></svg></div>
+        <div class="product-media"><img src="images/shampoo-antipulgas.jpg" alt="Shampoo y antipulgas"></div>
         <div class="product-body"><h4>Shampoo y antipulgas</h4><p>Cuidado de piel y pelaje, control de parásitos.</p><span class="product-tag">En tienda</span></div>
       </div>
       <div class="product reveal" data-cat="higiene">
-        <div class="product-media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3h6M10 3v5.5L5.5 17a2 2 0 0 0 1.8 3h9.4a2 2 0 0 0 1.8-3L14 8.5V3"/></svg></div>
+        <div class="product-media"><img src="images/vitaminas-suplementos.jpg" alt="Vitaminas y suplementos"></div>
         <div class="product-body"><h4>Vitaminas y suplementos</h4><p>Apoyo nutricional según edad y necesidad.</p><span class="product-tag">En tienda</span></div>
       </div>
       <div class="product reveal" data-cat="snacks">
-        <div class="product-media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="9" r="2.2"/><circle cx="16" cy="9" r="2.2"/><path d="M6 15c1.3 2.3 3.4 3.5 6 3.5s4.7-1.2 6-3.5"/></svg></div>
+        <div class="product-media"><img src="images/snacks-premios.jpg" alt="Snacks y premios"></div>
         <div class="product-body"><h4>Snacks y premios</h4><p>Ideales para reforzar el entrenamiento.</p><span class="product-tag">En tienda</span></div>
       </div>
       <div class="product reveal" data-cat="accesorios">
-        <div class="product-media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="8"/><path d="M9 12a3 3 0 1 0 6 0 3 3 0 0 0-6 0Z"/></svg></div>
+        <div class="product-media"><img src="images/juguetes.jpg" alt="Juguetes para mascotas"></div>
         <div class="product-body"><h4>Juguetes</h4><p>Para el juego y la estimulación diaria.</p><span class="product-tag">En tienda</span></div>
       </div>
     </div>
@@ -743,8 +762,7 @@
     </div>
 
     <div class="photo-frame reveal">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 16-5-4-9 6"/></svg>
-      <p><!-- Reemplaza este bloque por una fotografía real del consultorio o del equipo -->Espacio reservado para fotografía del consultorio</p>
+      <img src="images/consulta-general.jpg" alt="Equipo de RiscoVet atendiendo a una mascota">
     </div>
   </div>
 </section>
@@ -837,7 +855,10 @@
 <footer>
   <div class="container footer-top">
     <div class="footer-brand">
-      <span class="brand-word">Risco<span style="color:var(--gold)">Vet</span></span>
+      <div class="footer-brand-row">
+        <span class="footer-logo"><img src="images/logo.jpg" alt="Logo RiscoVet"></span>
+        <span class="brand-word">Risco<span style="color:var(--gold)">Vet</span></span>
+      </div>
       <p>Clínica veterinaria en Trinidad, Beni. Cuidado profesional y cercano para tu mascota.</p>
     </div>
     <div class="footer-col">
